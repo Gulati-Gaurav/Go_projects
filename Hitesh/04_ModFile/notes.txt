@@ -1,0 +1,53 @@
+=> go mod init <name>
+    - command is essential for setting up a new Go project, managing dependencies, and ensuring consistent builds across different environments.
+    - eg. 
+        module playground
+        go 1.22.5
+        require github.com/gorilla/mux v1.8.1 // indirect
+    - It tells the user the module name and that this entire code is dependent on go version 1.22.5
+    - // indirect  means that you haven't used this in your code yet.
+    - run "go mod tidy" to clear that indirect when you have used it - it tidies all the packages and removes the one you are not using 
+
+    - without this you won't be able to debug as well. 
+    - name should be like go mod init hostname/username     
+
+=> History
+    - It is the new go dependency management system
+    - Dependencies weren't always introduced like these using the modules
+    - Earlier we had to deal with a lot of files
+    - In 2019 modules were introduced
+    - https://go.dev/blog/using-go-modules 
+    - Now even the outside dependencies aren't shown in your working folder, they are displayed somewhere else.
+
+=> Go tool chain 
+    - is a way to pull in all the dependencies
+    - eg. go get -u github.com/gorilla/mux
+    - go get: Downloads and installs a package (or dependency) for the first time.
+    - go get -u: Updates an existing package to the latest version.
+    - this will fetch the dependency from the web - hence make sure your server has access to get files from internet outside
+    - go list                            = lists information about packages
+    - go list all                        = lists all installed packages on your system
+    - go list -m all                     = lists all the packages your project is dependent on
+    - go list -m -versions <packageName> = tells the version of the package 
+
+=> Mux
+    - It is a Routing System
+    - It is a package which implements request router and dispatcher for matching incoming requests to their respective handler.
+    - Gorilla Mux itself does not start a server. It is primarily a router and dispatcher for handling HTTP requests. To start a server, you still need to use the net/http package in Go.
+
+=> go sum
+    - When we bring on dependency from the internet, there might be man in middle attack
+    - Hence go sum maintains a hash which changes if what we are bringing from the internet changes
+    - run "go mod verify" to verify that all the packages have the same hash as the one in go sum
+
+=> Where are these dependencies stored
+    - In the gopath, go to pkg -> mod -> cache
+    - cache is where they are stored and not in your working directory
+    - Next time you try to access them, they are not fetched from internet but your cache.
+
+
+- "go mod graph"  => makes a graph of all the packages dependencies
+- "go mod edit"   => to edit the go mod file (has various tools)
+- "go mod vendor" => to get the code of the packages so that you can edit the way you want and then use.
+                     Like the node modules. Now everything will not be from internet or cache but from this vendor (when you run "go run -mod=vendor main.go") 
+- all commands like go mod ... are expensive operations so be careful

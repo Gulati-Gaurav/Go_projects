@@ -1,0 +1,122 @@
+Need to install the Go Runtime which build, compiles, runs the go code.
+
+=> Go General
+    - In Go, a slice is a reference to an underlying array. When you pass a slice to a function or method, you are passing a reference to the same underlying array. Means By reference is passed.
+
+    - Go is statically typed language (means a variable can have only one type of value)
+    - Go is yes as well as no object oriented programming language
+
+    - Go is pass by value language
+
+    - Go is compiled language - i.e. .exe is made and that is executed (unlike interpreted languages like python and intermediate languages like Java which needs JVM (Java Virtual Machine) to execute)
+
+    - A lot of things are missing in go but you don't need them 
+
+=> CLI Notes
+    To check go is running, in terminal run the command = go
+    go help or go help <command_name>   = to get information about a command
+    go env                              = to get the information about go (cache, os)
+    go env GOPATH                       = To get the path where go is installed. Inside this is pkg -> mod
+
+
+    To run the code, type in the terminal    = go run file1 file2
+    To build the code, type in the terminal  = go build file1 file2
+    To build all the files                   = go build .
+    To run the build file i.e. exe from command line, open in integrated terminal and then run = ./<build_name>
+
+    go run = compiles and runs the program. 
+    go build = just compiles
+
+    go run command compiles and runs the code, but it does not produce a standalone executable file that you can see in your filesystem. Instead, it creates a temporary executable file, runs it, and then cleans up by deleting the file once the execution is complete. This is why you don't see an executable file when you use go run.
+    On the other hand, go build compiles the code and produces an executable file in the current directory (or the specified output directory), which is why you can see the .exe file after running go build.
+
+    See different CLI commands in the GO CLI pic
+
+=> Package Notes
+    package = project = workspace => collection of common source code files. It can have many related files inside.
+    Every file under a package should have same package name. Analogous to namespace in .NET
+
+    2 types of packages:-
+    1. Executable type => For doing something.
+    2. Reusable Types  => Like code dependency or library. eg. helper functions
+    Name of the package decides whether you are creating a executable or reusable type package.
+    main means we are making a executable package. Hence it is a keyword.
+    Any other package would mean we are creating a resuable package.
+    Every executable package should also have a main function inside of it. More like an entry point. When we run go build we the main function is automatically called.
+    For a reusable package, running go build will not make .exe file.
+
+=> Import Notes
+    = Import is used to give our package access to some code which is written inside another package. 
+    = import "fmt" means give access to package fmt.
+    = fmt stands for format. It is a standard library package (included in go by default). To print information to terminal.
+    = can import standard and other packages that are created by other engineers.
+
+=> Syntax
+    No brackets for if and for loop
+
+    Everything is type
+    func  _ _
+    var   _ _
+    const _ _
+    type  _ _
+
+    - cast in go is like string(car) not (string)car
+    - in go data type is mentioned first, name later
+
+    func (receiver) funcName(inputs) (return types) {
+
+    }
+
+    imp can use func, variables of packages with capital letter outside packages as they are public. Smallcase means private
+
+    - go extension comes with lexer (present in all language and checks for the syntax, grammar) which makes writing ; optional since it adds on its own but without it we need to add ; as it is part of syntax
+
+=> General Notes
+    To handle error in go ask yourselves what should I do. What should be returned from here ideally ? and then implement that.
+
+    to make a test create a new file ending in _test.go
+    to run all tests in a package, run the command  => go test
+
+    pointer is a variable that stores memory address.
+
+    Can use the err variable multiple times assignment. eg. 
+        data, err:= temp()
+        if err!=nil{
+            fmt.Println(data);
+        }
+        data2, err:= temp()
+        if err!=nil{
+            fmt.Println(data2);
+        }
+
+    & means reference
+    by default ptr if not initialised is nil
+
+=> panic =
+    The panic built-in function stops normal execution of the current goroutine. When a function F calls panic, normal execution of F stops immediately. Any functions whose execution was deferred by F are run in the usual way, and then F returns to its caller. To the caller G, the invocation of F then behaves like a call to panic, terminating G's execution and running any deferred functions. This continues until all functions in the executing goroutine have stopped, in reverse order. At that point, the program is terminated with a non-zero exit code. This termination sequence is called panicking and can be controlled by the built-in function recover.
+
+=> any = interface{}
+    - both any and interface{} are one and the same thing
+    - both are used to handle any type of data. 
+
+=> Flag
+    Ok so when we want to take some input from user from command line we use flags. It has 3 parts - name of the flag, the default value in case user doesn't provide and brief description of the flag's purpose, helping users understand how to use it.
+
+    $ After all flags are defined, call
+    flag.Parse() => to parse the command line arguements
+
+    $ To provide value of flag in CLI
+    go run your_program.go -name="Alice" 
+
+    Command line flag syntax. The following forms are permitted:
+        -flag
+        --flag   // double dashes are also permitted
+        -flag=x
+        -flag x  // non-boolean flags only
+
+    $ To display detailed information about all flags, including the name flag, you can use the -h or --help flag
+    your_program -h 
+
+=> select
+    The select statement lets a goroutine wait on multiple communication operations.
+    A select blocks until one of its cases can run, then it executes that case. It chooses one at random if multiple are ready.

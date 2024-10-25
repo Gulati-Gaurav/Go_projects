@@ -1,0 +1,116 @@
+=> Os vs io
+    os.WriteFile(fileName, data, 0666)
+
+    os.ReadFile(fileName)
+
+    os.Remove("_decktesting")
+
+
+    io.ReadAll(res.Body)                  // how to get bytes from a reader interface
+
+    io.Copy(os.Stdout, resp.Body)         // Reader Interface to Writer Interface
+
+
+	reqBody := strings.NewReader(content) // how to pass something which has our content and also implements the reader interface ?
+
+    buf := new(strings.Builder)           // how to get string from reader interface
+    n, err := io.Copy(buf, r)
+    fmt.Println(buf.String())
+
+=> Panic vs exit
+                        os.Exit()	                                panic()
+    Deferred functions	Not executed	                            Executed
+    Error handling	    Explicit error handling	                    Implicit error handling
+    Typical use cases	Configuration errors, resource failures	    Programming errors, unexpected conditions
+
+    When panic is called, including implicitly for run-time errors such as indexing a slice out of bounds or failing a type assertion, it immediately stops execution of the current function and begins unwinding the stack of the goroutine, running any deferred functions along the way. If that unwinding reaches the top of the goroutine's stack, the program dies.
+
+    Hence we panic but not exit so that defferred are executed. 
+
+=> String Format
+    p := point{1, 2}
+ 
+    $ to print struct
+        fmt.Printf("struct1: %v\n", p)   
+    $ to print struct with fields
+        fmt.Printf("struct2: %+v\n", p)
+    $ to print code that produced the value
+        fmt.Printf("struct3: %#v\n", p)
+
+    $ Print type of variable
+        fmt.Printf("type: %T\n", p)
+
+    $ Print booleans
+        fmt.Printf("bool: %t\n", true)
+    $ Print int
+        fmt.Printf("int: %d\n", 123)
+    $ Print chars
+        fmt.Printf("char: %c\n", 33)
+    $ Print float
+        fmt.Printf("float1: %f\n", 78.9)
+    $ Print string
+        fmt.Printf("str1: %s\n", "\"string\"")
+
+=> Print
+    To Print Normal Console Message
+	    fmt.Print()            // print without new line
+        fmt.Println(1, n, str) // prints space separated 
+        fmt.Printf("int: %d\n", 123)  
+    To Generate an error message in the error struct
+        fmt.Errorf("=%+v \n", barry)
+    To generate a formatted String
+        str := fmt.Sprintf("%+v \n", barry)
+
+=> Shortcuts
+    - after typing func press enter to get whole function syntax with the help of go
+    - after typing pkgm press enter to get package main anf main func
+    - after typing fp   press enter to get fmt.Println()
+    - after typing func press enter to get whole function syntax with the help of go
+
+=> Ascii vs ParseInt
+    Atoi (ascii to int)
+        Converts a string to an int.
+        Assumes base 10.
+        Equivalent to ParseInt(s, 10, 0).
+        Returns an int and an error.
+
+    ParseInt
+        Converts a string to an integer of specified bit size.
+        Supports different bases.
+        Returns an int64, an error, and a boolean indicating if the value overflows.
+        More flexible than Atoi.   
+
+=> Implicit vs Ex
+    Implicit Error Handling
+    In implicit error handling, the language or runtime environment handles errors without requiring explicit code from the programmer. This often involves:
+
+    Automatic memory management: The language automatically allocates and deallocates memory, handling potential errors like memory leaks.
+    Runtime exceptions: These errors are not checked at compile time and can lead to program crashes if not handled carefully. Examples include null pointer exceptions, array index out of bounds, etc.
+    Default error handling: The system might provide default behaviors for certain errors, such as displaying an error message and terminating the program.
+
+    Explicit Error Handling
+    Explicit error handling requires the programmer to explicitly code for potential errors using constructs like try-catch blocks, if-else statements, or return codes. This approach provides more control over error handling and allows for graceful recovery.
+
+=> json.Marshal vs json.NewEncoder
+    - json.Marshal is used to encode a Go data structure into JSON format and return the JSON as a byte slice ([]byte).
+    - json.NewEncoder is used to create a JSON encoder that writes JSON data to an io.Writer. 
+
+=> json.Unmarshal vs json.NewDecoder
+    - json.Unmarshal is used to parse JSON data stored in a byte slice ([]byte) and populate a Go data structure.
+    - json.NewDecoder is used to create a JSON decoder that reads from an io.Reader and populate a Go data structure.
+
+=> Marshal vs Unmarshal 
+    - When you wanna send something over the line you wanna marshal the object 
+    - Remember marshal means to aseemble and arrange in order. 
+
+=> godoc
+    - Godoc extracts and generates documentation for Go programs. It runs as a web server and presents the documentation as a web page.
+    godoc --help
+        - to get all commands you can do
+    godoc -http :8080
+        - to get a website running on a port which shows your documentation
+        - If your code has some private data (small case), it is not gonna show documentation for it
+
+=> Read vs Write interface
+    - Read means we can read from this.
+    - Write means we can write into this.

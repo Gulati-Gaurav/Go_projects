@@ -1,0 +1,45 @@
+- Use ByteBuffer or StringsBuilder to build string in a better way
+- To get the final url (which is preferred in case you wanna grab the url) use the one inside the Request in the response
+- Whenever doing DFS/recursion, think if you may loose some data 
+- If wanna use a unordered_set in go then use a map of map[string]struct{} type. struct{} will not use any space instead of bool
+- If declaring the size of the slice then also calling append will not allocate more space if already space there. So no need to iter variable
+- When going to a package see example section 
+- When you wanna paste the output from a code to a file 
+    go run main.go > file.txt
+- When you wanna use text from file as input in terminal
+    go run main.go < file.txt
+-  a rune is a data type that is a unique integer value that corresponds to a character in the Unicode standard.  used when working with individual characters within a string. is an alias for the int32 type
+    // Declare and initialize a string containing a Unicode character
+    smiley := "😃"
+
+    // Converting a string to a slice of runes
+    runes := []rune(smiley)
+
+    // Character-level operations
+    firstRune := runes[0]
+    isDigit := unicode.IsDigit(firstRune)
+
+    // Printing
+    fmt.Println(smiley)     // Output: 😃
+    fmt.Println(runes)      // Output: [128515]
+    fmt.Println(isDigit)    // Output: false
+- when types of >=2 consecutive parameters are same then can ignore for all except last
+    func change(firstName, lastName string)
+- "use of go get to build and install packages is deprecated. In a future release, the -d flag will always be enabled." So, go get is only for download now.
+- https://go.dev/doc/go-get-install-deprecation
+
+- init function 
+    // So init is a function which runs when your service is being up. 
+    // Can have multiple init function in a package. 
+    // All will run before main function
+    See -   https://tutorialedge.net/golang/the-go-init-function/
+
+    // init named function will run. Even Init won't
+
+- When a package is described as "pure Go," it means that the package is written entirely in the Go programming language without relying on any external C, C++, or other language bindings. 
+
+- This is how to include package and also not use it
+	_ "github.com/lib/pq"
+
+- package is collection of go files.
+- module is collection of packages.
