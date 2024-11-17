@@ -8,13 +8,14 @@ func newCard() string {
 }
 
 func variables() {
+	// 3 Types of declaring variables
 	// var Card string = "Ace of spades"
 	// var Card        = "Ace of spades" (no need of mentioning the type if declaring also)
 	card := "Ace of Spades" // var is replaced by :
 	// := is called the walrus operator
 	fmt.Println(card)
 
-	// for const variables and global variables CAN'T use walrus
+	// for const variables, global variables, without initialisation CAN'T use walrus
 	const name = "Gaurav"
 
 	// global variables

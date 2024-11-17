@@ -5,7 +5,8 @@ import "fmt"
 func arrays_slices_for_discard_subset() {
 	// array = array
 	// slice = vector
-	// you mention size it is array. You don't it is slice. However you can omit writing elements in array and can write elements initially in a slice
+	// you mention size it is array. You don't it is slice. 
+	// However you can omit writing elements in array and can write elements initially in a slice
 
 	cards := []string{newCard(), "Ace of diamonds"} // slice
 	cards = append(cards, "Six of Spades")          // add element.
@@ -36,7 +37,7 @@ func arrays_slices_for_discard_subset() {
 	// 3 12 5
 	// 4 12 8
 
-	// In case it is a struct then use below
+	// In case it is a struct then use below (array of pointers of struct)
 	// for i, card := range cards2 {
 	// 	*card = 12
 	// 	fmt.Println(i, *card, cards2[i])
