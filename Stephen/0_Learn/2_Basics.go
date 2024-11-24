@@ -19,6 +19,7 @@ func arrays_slices() {
 
 	var arrayName [5]int                  // array
 	numbers := [5]int{10, 20, 30, 40, 50} // array
+	fmt.Println(arrayName, numbers)
 }
 
 func for_discard_subset() {
@@ -58,5 +59,5 @@ func for_discard_subset() {
 	// will not modify the original slice. returns a new slice
 	subCard := cards2[0:2]
 
-	fmt.Println(cards2, subCard, arrayName, numbers)
+	fmt.Println(cards2, subCard)
 }
