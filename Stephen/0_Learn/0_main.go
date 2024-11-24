@@ -9,7 +9,8 @@ func main() {
 	fmt.Println("Hi There", 2)      // To Print multiple (spaces get added in b/w)
 
 	variables()
-	arrays_slices_for_discard_subset()
+	arrays_slices()
+	for_discard_subset()
 
 	// Type and their functions
 	car := cars("Maruti") // or var car cars = "Maruti"
