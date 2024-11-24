@@ -169,4 +169,6 @@ func main() {
 	// fmt.Println(ptr.value)
 	// }
 
+	// to create temporary structs
+	temp_structs_go()
 }
