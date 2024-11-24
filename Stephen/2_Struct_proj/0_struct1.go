@@ -40,6 +40,12 @@ func Initialisation() {
 	bill.firstName = "Bill"
 	bill.lastName = "Gates"
 
+	// var billy person2
+	// Can't do below since, Only pointers, slices, maps, channels, and interfaces can be compared to nil.
+	// fmt.Println(billy.contact==nil)
+	// If you do not explicitly initialize the contact field in person2, it will be assigned its zero value by default. 
+	// In Go, all struct fields are automatically initialized to their respective zero values. Even on multiple nesting of structs no problem of nil.
+
 	// Ways to print
 	fmt.Println(gaurav, david, bill) // will print properties space separated.
 	// If want string formatting or interpolation we use printf instead of println. So that we can use the %v
