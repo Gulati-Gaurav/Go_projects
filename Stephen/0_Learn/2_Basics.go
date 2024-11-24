@@ -5,11 +5,12 @@ import "fmt"
 func arrays_slices_for_discard_subset() {
 	// array = array
 	// slice = vector
-	// you mention size it is array. You don't it is slice. 
+	// you mention size it is array. You don't it is slice.
 	// However you can omit writing elements in array and can write elements initially in a slice
 
 	cards := []string{newCard(), "Ace of diamonds"} // slice
-	cards = append(cards, "Six of Spades")          // add element.
+	// put {} in end of []string, map[string]string
+	cards = append(cards, "Six of Spades") // add element.
 	// cards = append(cards, "Six of Spades", "Ace of Clubs") // add multiple elements.
 	// imp The append doesn't modify existing slice instead returns new one.
 
