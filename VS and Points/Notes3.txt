@@ -43,3 +43,17 @@
 
 - package is collection of go files.
 - module is collection of packages.
+
+Was GOPATH always required?
+		Before Go 1.11:
+
+		Yes, GOPATH was required.
+		Go expected all your projects to be inside this folder ($GOPATH/src).
+		You had to set it explicitly (e.g., export GOPATH=$HOME/go).
+		Starting with Go 1.11:
+
+        GOPATH became optional because Go introduced Go Modules.
+		Go Modules allow you to manage dependencies outside of the GOPATH directory.
+
+    
+    https://chatgpt.com/share/673f7f34-6458-800b-8e2e-07c2a4386158 

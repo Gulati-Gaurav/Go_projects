@@ -1,0 +1,69 @@
+$ What are environment variables?
+	- Think of them as sticky notes on your computer. These notes:
+	- Tell your computer where to find important stuff.
+	- Give your programs instructions about how to work.
+	- More like a configuration management
+
+$ What is PATH?
+	An environment variable that tells your shell where to look for executable files. Adding these paths ensures you can run Go commands or tools globally from any directory.
+
+$ What is GOPATH?
+	The Go needs a workspace—a place where it can:
+		Store projects you're working on.
+		Save tools and shortcuts.
+	GOPATH Stores the location of this place
+
+	Was GOPATH always required?
+		Before Go 1.11:
+		Yes, GOPATH was required.
+		Go expected all your projects to be inside this folder ($GOPATH/src).
+		You had to set it explicitly (e.g., export GOPATH=$HOME/go).
+		Starting with Go 1.11:
+
+		GOPATH became optional because Go introduced Go Modules.
+		Go Modules allow you to manage dependencies outside of the GOPATH directory.
+
+$ Are the environment variables commands different for mac and windows?
+	Yes, the commands for managing environment variables are different for Mac and Windows.
+
+$ Setting environment variables from your terminal affects only that terminal session (or its child processes). It does not affect the whole PC or other terminals unless explicitly saved globally. 
+
+	When you set a variable in the terminal:
+		Example (in Linux/Mac):
+		export MY_VAR=my_value
+	This variable is only available in the current terminal window where you set it.
+	If you close the terminal, The variable is lost because it wasn’t saved permanently.
+	Each terminal session is like a separate "room."
+	When you set an environment variable in one terminal, it is only visible inside that session (or in any programs launched from that terminal).
+
+	Does it affect the directory?
+	No, environment variables don’t depend on your current directory.
+	They affect processes launched from that terminal session, regardless of which directory you are in.
+
+	For the Whole PC (Persistent Variables)
+	If you want an environment variable to apply to the entire system or be available every time you open a terminal:
+	Add the variable to your shell configuration file (e.g., ~/.bashrc, ~/.zshrc, or ~/.profile).
+		export MY_VAR=my_value
+
+	Then reload the file:
+		source ~/.bashrc
+
+$ Common commands On Linux or Mac Terminal:
+
+	To list all environment variables:
+		printenv
+		Or:
+		env
+
+	To check a specific variable (like $HOME):
+		echo $HOME
+
+	View exported variables:
+		export
+
+	Tip: On any operating system, these lists can be long, so you can filter results.
+		For example, on Linux/Mac:
+		printenv | grep PATH
+
+
+export GOPATH=$HOME/go
