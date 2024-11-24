@@ -9,14 +9,12 @@ func arrays_slices() {
 	// However you can omit writing elements in array and can write elements initially in a slice
 
 	cards := []string{newCard(), "Ace of diamonds"} // slice
-
+	// To make a slice of certain size
+	// _ := make([]int, 5)
 
 	cards = append(cards, "Six of Spades") // add element.
 	// cards = append(cards, "Six of Spades", "Ace of Clubs") // add multiple elements.
 	// imp The append doesn't modify existing slice instead returns new one.
-
-	// To make a slice of certain size
-	// _ := make([]int, 5)
 
 	var arrayName [5]int                  // array
 	numbers := [5]int{10, 20, 30, 40, 50} // array
