@@ -14,7 +14,18 @@ import (
 
 // to run all tests in a package, run the command => go test
 
-// how to decide what to test => what I care about. What do you think other might break, the core logic test ?
+// how to decide what to test => what I care about. What do you think other might break, t he core logic test ?
+
+// to check whether you have covered everything for testing (not very useful) use 
+	// go test -cover
+// to find out all the lines missed (in text format) use (does it for all files)
+	// go test -coverprofile report
+// to get above in nice html representation use 
+	// go tool cover -html report
+
+// Can run these test cases in parallel (using a configuration) (in case of large number of cases)
+// Can use a table driver approach to provide the test cases
+// Can use subtests (for proper organisation)
 
 func TestNewDeck(t *testing.T) {
 	cards := newDeck()

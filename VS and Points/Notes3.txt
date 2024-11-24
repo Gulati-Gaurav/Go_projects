@@ -8,21 +8,7 @@
     go run main.go > file.txt
 - When you wanna use text from file as input in terminal
     go run main.go < file.txt
--  a rune is a data type that is a unique integer value that corresponds to a character in the Unicode standard.  used when working with individual characters within a string. is an alias for the int32 type
-    // Declare and initialize a string containing a Unicode character
-    smiley := "😃"
 
-    // Converting a string to a slice of runes
-    runes := []rune(smiley)
-
-    // Character-level operations
-    firstRune := runes[0]
-    isDigit := unicode.IsDigit(firstRune)
-
-    // Printing
-    fmt.Println(smiley)     // Output: 😃
-    fmt.Println(runes)      // Output: [128515]
-    fmt.Println(isDigit)    // Output: false
 - when types of >=2 consecutive parameters are same then can ignore for all except last
     func change(firstName, lastName string)
 - "use of go get to build and install packages is deprecated. In a future release, the -d flag will always be enabled." So, go get is only for download now.
@@ -58,7 +44,5 @@ Was GOPATH always required?
     
     https://chatgpt.com/share/673f7f34-6458-800b-8e2e-07c2a4386158 
 
-One nice thing about go is that if just over a function you mention a comment, you will be able to see that message when you hover over that function anywhere (just like summary in c#)
+- One nice thing about go is that if just over a function you mention a comment, you will be able to see that message when you hover over that function anywhere (just like summary in c#)
 
-go fmt - primarily handles the formatting of Go source code, ensuring that it adheres to the official Go style guidelines.
-vs code inbuilt formatter uses go fmt indirectly (using go pls) to format the code. 
