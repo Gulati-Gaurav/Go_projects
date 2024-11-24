@@ -30,7 +30,7 @@ func Initialisation() {
 		firstName: "Barry",
 		lastName:  "Allen",
 	}
-	// It is important to put comma in instant initialisation not in struct declaration above
+	// It is important to put comma in instance initialisation not in struct declaration above
 	// Also commas need to placed after all properties including last property
 
 	// 3rd instant initialisation.
@@ -58,6 +58,5 @@ func Initialisation() {
 		},
 	}
 	
-
 	fmt.Printf("%+v \n", john)
 }
