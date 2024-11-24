@@ -11,10 +11,9 @@ func variables() {
 	// 3 Types of declaring variables
 	// var Card string = "Ace of spades"
 	// var Card        = "Ace of spades" (no need of mentioning the type if declaring also)
-	// 									 (useful in case of constant and global variables)
+	// 									 (useful in case of constant and global variables as can't use walrus in these)
 	card := "Ace of Spades" // := is called the walrus operator
 
-	// for const variables, global variables, without initialisation CAN'T use walrus
 	const name = "Gaurav"
 
 	// global variables
