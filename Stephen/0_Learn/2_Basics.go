@@ -39,7 +39,6 @@ func for_discard_subset() {
 	}
 
 	// for every iteration i, card are initialised i.e. card is not actual cards[i] but rather a copy of cards[i] created using card:=cards[i]. Proof:-
-
 	for i, card := range cards2 {
 		card = 12
 		fmt.Println(i, card, cards2[i])
@@ -50,12 +49,6 @@ func for_discard_subset() {
 	// 2 12 4
 	// 3 12 5
 	// 4 12 8
-
-	// In case it is a struct then use below (array of pointers of struct)
-	// for i, card := range cards2 {
-	// 	*card = 12
-	// 	fmt.Println(i, *card, cards2[i])
-	// }
 
 	// the underscore (_) is a special identifier used to discard values. It's often used when you need to call a function or method that returns a value, but you don't need that value.
 	for _, card := range cards2 {
