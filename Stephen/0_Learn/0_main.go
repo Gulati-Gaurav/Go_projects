@@ -19,5 +19,4 @@ func main() {
 	car1, _ := deal(car)
 	fmt.Println(car1)
 
-	// One nice thing about go is that if just over a function you mention a comment, you will be able to see that message when you hover over that function anywhere (just like summary in c#)
 }

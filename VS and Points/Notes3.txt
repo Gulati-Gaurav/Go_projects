@@ -57,3 +57,8 @@ Was GOPATH always required?
 
     
     https://chatgpt.com/share/673f7f34-6458-800b-8e2e-07c2a4386158 
+
+One nice thing about go is that if just over a function you mention a comment, you will be able to see that message when you hover over that function anywhere (just like summary in c#)
+
+go fmt - primarily handles the formatting of Go source code, ensuring that it adheres to the official Go style guidelines.
+vs code inbuilt formatter uses go fmt indirectly (using go pls) to format the code. 
