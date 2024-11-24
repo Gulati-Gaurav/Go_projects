@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// to not create a struct for whole package but just inside a function
 func temp_structs_go() {
 	obj := struct {
 		name  string
