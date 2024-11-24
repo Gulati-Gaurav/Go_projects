@@ -9,7 +9,8 @@ func arrays_slices() {
 	// However you can omit writing elements in array and can write elements initially in a slice
 
 	cards := []string{newCard(), "Ace of diamonds"} // slice
-	// put {} in end of []string, map[string]string
+
+
 	cards = append(cards, "Six of Spades") // add element.
 	// cards = append(cards, "Six of Spades", "Ace of Clubs") // add multiple elements.
 	// imp The append doesn't modify existing slice instead returns new one.
@@ -19,12 +20,20 @@ func arrays_slices() {
 
 	var arrayName [5]int                  // array
 	numbers := [5]int{10, 20, 30, 40, 50} // array
-	fmt.Println(arrayName, numbers)
+
+	// put {} in end of []string, map[string]string
+	// the moment you put {} it becomes not nil. Just mentioning the variable and not using {} or using make() makes it nil
+	tempSlice := []string{}
+	tempSlice2 := make([]string, 3)
+	var tempSlice3 []string
+	fmt.Println(tempSlice == nil, tempSlice2 == nil, tempSlice3 == nil) // false false true
+
+	fmt.Println(arrayName, numbers, cards)
 }
 
 func for_discard_subset() {
 	cards2 := [5]int{1, 3, 4, 5, 8}
-	
+
 	// iterate. i = index, card = element at ith index.
 	// range is keyword for every element in slice. first is index, second is element.
 	for i, card := range cards2 {
