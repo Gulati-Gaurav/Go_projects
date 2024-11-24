@@ -171,4 +171,5 @@ func main() {
 
 	// to create temporary structs
 	temp_structs_go()
+	tempFunc()
 }

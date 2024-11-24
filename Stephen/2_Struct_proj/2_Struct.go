@@ -9,7 +9,7 @@ type temp struct {
 type temp2 struct {
 	name2 string
 }
-func main() {
+func tempFunc() {
 	firstObj := temp{
 		name: "Gaurav",
 		obj: temp2{

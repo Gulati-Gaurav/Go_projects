@@ -26,6 +26,7 @@ import (
 // Can run these test cases in parallel (using a configuration) (in case of large number of cases)
 // Can use a table driver approach to provide the test cases
 // Can use subtests (for proper organisation)
+// Writing test cases encourage us to write modular code instead of large fat functions
 
 func TestNewDeck(t *testing.T) {
 	cards := newDeck()
