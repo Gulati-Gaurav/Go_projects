@@ -24,6 +24,8 @@ func main() {
 	// structs are value type
 	tempFunc()
 
+	// Deep copy a slice using either the built-in copy or append function to get a duplicated slice. However, assign an existed slice to a new variable gets a shallow copy whose slice header points to the same backing array as the source slice.
+
 	// One important thing regarding pointers. Say we pass a slice by value to receiver func then original slice will be changed. The reason is slice is pointer to underlying to array hence changes.
 
 	// When we create a slice Go creates a slice and array data structure for us. Slice has variables ptrToHead, length, capacity. ptrToHead points to the array in the memory. When we call slice we don't refer to slice but array. Go is still pass by value. Hence it creates a new slice for us having 3 new variabes ptrToHead, length, capacity. Values are copied hence ptrToHead is also copied. But ptrToHead still points to the same original array hence no change.
