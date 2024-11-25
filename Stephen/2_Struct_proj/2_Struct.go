@@ -22,7 +22,7 @@ func tempFunc() {
 	firstObj.slices[0] = 1
 	firstObj.slices[1] = 2
 	firstObj.slices[2] = 3
-	// firstObj.slices = append(firstObj.slices, 3)
+	firstObj.slices = append(firstObj.slices, 3)
 	
 	secondObj := firstObj
 	secondObj.obj.name2 = "HINL"
