@@ -13,12 +13,16 @@ type temp2 struct {
 func tempFunc() {
 	firstObj := temp{
 		name: "Gaurav",
-		slices: []int{1, 2},
+		// slices: []int{1, 2},
 		obj: temp2{
 			name2: "Gulati",
 		},
 	}
-	firstObj.slices = append(firstObj.slices, 3)
+	firstObj.slices = make([]int, 4)
+	firstObj.slices[0] = 1
+	firstObj.slices[1] = 2
+	firstObj.slices[2] = 3
+	// firstObj.slices = append(firstObj.slices, 3)
 	
 	secondObj := firstObj
 	secondObj.obj.name2 = "HINL"
