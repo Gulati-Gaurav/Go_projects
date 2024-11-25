@@ -18,11 +18,12 @@ func tempFunc() {
 			name2: "Gulati",
 		},
 	}
+	firstObj.slices = append(firstObj.slices, 3)
+	
 	secondObj := firstObj
 	secondObj.obj.name2 = "HINL"
 	fmt.Println(firstObj.obj.name2) // Gulati
 
-	firstObj.slices = append(firstObj.slices, 3)
 	secondObj.slices = append(secondObj.slices, 5)
 	fmt.Println(firstObj.slices) // [1, 2]
 
