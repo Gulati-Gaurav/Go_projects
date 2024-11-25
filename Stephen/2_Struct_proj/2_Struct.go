@@ -4,6 +4,7 @@ import "fmt"
 
 type temp struct {
 	name string
+	slices []int
 	obj  temp2
 }
 type temp2 struct {
@@ -12,6 +13,7 @@ type temp2 struct {
 func tempFunc() {
 	firstObj := temp{
 		name: "Gaurav",
+		slices: []int{1, 2},
 		obj: temp2{
 			name2: "Gulati",
 		},
@@ -19,6 +21,13 @@ func tempFunc() {
 	secondObj := firstObj
 	secondObj.obj.name2 = "HINL"
 	fmt.Println(firstObj.obj.name2) // Gulati
+
+	firstObj.slices = append(firstObj.slices, 3)
+	secondObj.slices = append(secondObj.slices, 5)
+	fmt.Println(firstObj.slices) // [1, 2]
+
+	// Below when you modify secondObj.slices = []int{4, 5}, you create a new slice with a new underlying array. This breaks the connection between firstObj.slices and secondObj.slices.
+	// secondObj.slices = []int{4,5} 
 }
 
 // In Go, structs are value types by default.
