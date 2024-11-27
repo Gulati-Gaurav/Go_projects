@@ -22,7 +22,7 @@ import "fmt"
 // 	fmt.Println(sb.getGreeting())
 // }
 
-// => Now we will use interfaces to prevent the code reuse of the printGreeting which has similar logic.
+// => Now we will use interfaces to prevent the code duplicacy of the printGreeting which has similar logic.
 type bot interface {
 	getGreeting() string
 }
