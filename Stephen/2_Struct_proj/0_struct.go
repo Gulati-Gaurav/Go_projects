@@ -36,27 +36,27 @@ func main() {
 	// If you pass a struct by value to a function, a copy of the struct is made, regardless of whether it resides on the heap or stack.
 
 	// Below also works
-	// type MyStruct struct {
-	// 	value int
-	// }
+}
+type MyStruct struct {
+	value int
+}
 
-	// func (ms MyStruct) changeNum() {
-	// 	ms.value = 5
-	// }
+func (ms MyStruct) changeNum() {
+	ms.value = 5
+}
 
-	// func createStruct() *MyStruct {
-	// 	s := MyStruct{value: 42}
-	// 	// s is allocated on the heap because its reference is returned
-	// 	return &s
-	// }
+func createStruct() *MyStruct {
+	s := MyStruct{value: 42}
+	// s is allocated on the heap because its reference is returned
+	return &s
+}
 
-	// func main() {
-	// 	ptr := createStruct()
-	// 	// ptr is a pointer to the heap-allocated MyStruct
-	// 	fmt.Println(ptr.value) // Output: 42
-	// 	fmt.Println((*ptr).value) // Output: 42 see here both above and this lines works
+func main() {
+	ptr := createStruct()
+	// ptr is a pointer to the heap-allocated MyStruct
+	fmt.Println(ptr.value) // Output: 42
+	fmt.Println((*ptr).value) // Output: 42 see here both above and this lines works
 
-	// ptr.changeNum()
-	// fmt.Println(ptr.value)
-	// }
+ptr.changeNum()
+fmt.Println(ptr.value)
 }

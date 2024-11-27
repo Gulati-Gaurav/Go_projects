@@ -12,8 +12,6 @@ type temp2 struct {
 }
 
 // In Go, structs are value types by default.
-// This creates a copy of firstObj. Both secondObj and firstObj are now independent structs in memory. Modifying secondObj does not affect firstObj.
-// Nested struct is also copied: The obj field, which is of type temp2, is also copied. So, secondObj.obj is a separate copy of firstObj.obj.
 
 
 func tempFunc() {
@@ -39,7 +37,7 @@ func tempFunc1() {
 	secondObj.obj.name2 = "HINL"
 	fmt.Println(firstObj.obj.name2) // Gulati
 
-	// Below is deep copy
+	// Below is shallow copy
 	secondObj.slices[3] = 4
 	fmt.Println(firstObj.slices) // [1, 2, 3, 4]
 }
