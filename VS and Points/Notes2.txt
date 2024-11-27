@@ -25,7 +25,7 @@
 
     When panic is called, including implicitly for run-time errors such as indexing a slice out of bounds or failing a type assertion, it immediately stops execution of the current function and begins unwinding the stack of the goroutine, running any deferred functions along the way. If that unwinding reaches the top of the goroutine's stack, the program dies.
 
-    Hence we panic but not exit so that defferred are executed. 
+    Hence we panic but not exit so that defferred are executed. Also should use recover to handle from panic
 
 => String Format
     p := point{1, 2}
@@ -65,7 +65,6 @@
     - after typing func press enter to get whole function syntax with the help of go
     - after typing pkgm press enter to get package main anf main func
     - after typing fp   press enter to get fmt.Println()
-    - after typing func press enter to get whole function syntax with the help of go
 
 => Ascii vs ParseInt
     Atoi (ascii to int)

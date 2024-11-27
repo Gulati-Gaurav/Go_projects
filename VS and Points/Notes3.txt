@@ -11,16 +11,13 @@
 
 - when types of >=2 consecutive parameters are same then can ignore for all except last
     func change(firstName, lastName string)
-- "use of go get to build and install packages is deprecated. In a future release, the -d flag will always be enabled." So, go get is only for download now.
-- https://go.dev/doc/go-get-install-deprecation
 
 - init function 
-    // So init is a function which runs when your service is being up. 
-    // Can have multiple init function in a package. 
-    // All will run before main function
+    So init is a function which runs when your service is being up. 
+    Can have multiple init function in a package. 
+    All will run before main function
     See -   https://tutorialedge.net/golang/the-go-init-function/
-
-    // init named function will run. Even Init won't
+    init named function will run. Even Init won't
 
 - When a package is described as "pure Go," it means that the package is written entirely in the Go programming language without relying on any external C, C++, or other language bindings. 
 
