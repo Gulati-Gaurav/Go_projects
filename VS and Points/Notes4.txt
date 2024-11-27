@@ -19,3 +19,7 @@
 => go fmt
     - go fmt - primarily handles the formatting of Go source code, ensuring that it adheres to the official Go style guidelines.
     - vs code inbuilt formatter uses go fmt indirectly (using go pls) to format the code. 
+
+=> mod history
+    - https://www.bytesizego.com/blog/history-of-dependency-management-go Well explained. 
+    - 
