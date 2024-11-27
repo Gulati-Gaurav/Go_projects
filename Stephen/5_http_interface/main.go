@@ -26,7 +26,7 @@ func AnotherWay() {
 	}
 	// This contains status, StatusCode etc
 	// body is of type interface called ReadCloser. This interface further implements Reader and Closer interface which requires reader and closer functions to fulfill.
-	// when a variables' type is an interface and you wanna use it. You can only use it via the functions it implements
+	// IMP when a variables' type is an interface and you wanna use it. You can only use it via the functions it implements
 
 	// Reader func accepts byte array and fills it with the response. Hence not only http request but we can also have many other struct implement these Reader interface which gives us a common way of interaction. See Image.
 	// Reader solves the problem of same logic different codes due to just type of arguement by making the type of arguement common to []byte
