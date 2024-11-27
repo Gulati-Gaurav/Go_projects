@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // In Go, you can create a type with multiple data members by defining a struct.
 
 // In Go, whether a struct is stored on the heap or stack depends on the context in which it is used. The Go compiler uses escape analysis to decide whether a variable should be allocated on the stack or the heap. Here are the general rules:
@@ -36,7 +38,9 @@ func main() {
 	// If you pass a struct by value to a function, a copy of the struct is made, regardless of whether it resides on the heap or stack.
 
 	// Below also works
+	main2()
 }
+
 type MyStruct struct {
 	value int
 }
@@ -51,12 +55,13 @@ func createStruct() *MyStruct {
 	return &s
 }
 
-func main() {
+func main2() {
 	ptr := createStruct()
 	// ptr is a pointer to the heap-allocated MyStruct
-	fmt.Println(ptr.value) // Output: 42
+	fmt.Print("\n\n")
+	fmt.Println(ptr.value)    // Output: 42
 	fmt.Println((*ptr).value) // Output: 42 see here both above and this lines works
 
-ptr.changeNum()
-fmt.Println(ptr.value)
+	ptr.changeNum()
+	fmt.Println(ptr.value) // 42. (won't change unless you receive a pointer)
 }
