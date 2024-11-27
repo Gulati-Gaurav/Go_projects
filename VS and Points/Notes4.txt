@@ -22,4 +22,5 @@
 
 => mod history
     - https://www.bytesizego.com/blog/history-of-dependency-management-go Well explained. 
-    - 
+    - go get vs go install
+        - 
