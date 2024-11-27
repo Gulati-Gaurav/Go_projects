@@ -17,8 +17,15 @@ func Print() {
 }
 
 func DeclarePrintMultipleVariables() {
-	var num, i, j int
-	fmt.Println(num, i, j)
+	var num, i int
+	var (
+		p, j int
+	)
+	var (
+		k string
+		l int
+	)
+	fmt.Println(num, i, j, p , k, l)
 }
 
 func TakeInputFromUser() {
