@@ -24,6 +24,8 @@ func AnotherWay() {
 		fmt.Println("Found error", err)
 		os.Exit(1)
 	}
+	defer resp.Body.Close() // this is best place to put the Close (should place after reading error)
+
 	// This contains status, StatusCode etc
 	// body is of type interface called ReadCloser. This interface further implements Reader and Closer interface which requires reader and closer functions to fulfill.
 	// IMP when a variables' type is an interface and you wanna use it. You can only use it via the functions it implements
@@ -41,7 +43,6 @@ func AnotherWay() {
 		fmt.Println(n)
 	}
 	fmt.Println(string(httpBody))
-	resp.Body.Close()
 
 	// Why close the body ?
 	// When you get the data (response body) from a website, you need to "close" it to free up resources and avoid wasting them.
